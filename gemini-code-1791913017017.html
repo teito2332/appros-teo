@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apross - Afiliación y Asesoramiento</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Poppins', 'sans-serif'] },
+                    colors: {
+                        apross: { light: '#48bbed', DEFAULT: '#007bb5', dark: '#005885' },
+                        whatsapp: '#25D366'
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { opacity: 1, boxShadow: '0 0 0 0 rgba(37, 211, 102, 0.5)' },
+                            '50%': { opacity: .9, boxShadow: '0 0 0 15px rgba(37, 211, 102, 0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: #48bbed;
+        }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden">
+
+    <!-- Topbar de Emergencias (Nueva) -->
+    <div class="bg-apross-dark text-white text-sm py-2 px-6">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span class="font-medium"><i class="fas fa-ambulance text-red-400 mr-2"></i>Urgencias: 0810-777-2985</span>
+                <span class="hidden sm:inline">|</span>
+                <span class="hidden sm:inline"><i class="fas fa-headset mr-2"></i>Atención: 0800-888-2776</span>
+            </div>
+            <a href="https://apross.gov.ar" target="_blank" class="hover:text-apross-light transition text-xs font-semibold">Web oficial APROSS <i class="fas fa-external-link-alt ml-1"></i></a>
+        </div>
+    </div>
+
+    <!-- Navegación -->
+    <header class="sticky top-0 z-50 glass-panel" id="navbar">
+        <div class="container mx-auto px-6 lg:px-12 relative flex items-center justify-between h-20">
+            <!-- Logo -->
+            <div class="flex items-center gap-3 cursor-pointer">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-apross-light to-apross flex items-center justify-center text-white font-bold text-2xl shadow-lg">
+                    A
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-apross-dark to-apross">Apross</span>
+                    <span class="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Asesoramiento de Afiliación</span>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600">
+                <a href="#asesoramiento" class="hover:text-apross transition-colors">Asesoramiento</a>
+                <a href="#accesos" class="hover:text-apross transition-colors">Gestiones Útiles</a>
+                <a href="#contacto" class="hover:text-apross transition-colors">Contacto</a>
+            </nav>
+
+            <div class="hidden md:block">
+                <a href="https://wa.me/5493510000000?text=Hola,%20quiero%20informaci%C3%B3n%20para%20afiliarme%20a%20Apross." target="_blank"
+                   class="bg-whatsapp hover:bg-green-600 text-white px-6 py-2.5 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all flex items-center gap-2">
+                    <i class="fab fa-whatsapp text-lg"></i> Consultar Afiliación
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section Enfocada en Asesoramiento -->
+        <section id="asesoramiento" class="relative pt-16 pb-24 overflow-hidden bg-white">
+            <div class="container mx-auto px-6 lg:px-12 relative z-10 flex flex-col lg:flex-row items-center gap-12">
+                
+                <div class="lg:w-1/2 text-center lg:text-left reveal active">
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 text-apross font-semibold text-sm mb-6 border border-blue-100">
+                        <i class="fas fa-handshake mr-2"></i> Estamos para acompañarte
+                    </div>
+                    <h1 class="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-slate-800 leading-tight mb-6">
+                        Orientación y gestión para tu <span class="text-apross">Afiliación a APROSS</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0">
+                        Un contacto cercano para resolver todas tus dudas. Te asesoramos paso a paso para que puedas acceder a la mejor cobertura de salud de la provincia.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+                        <a href="https://wa.me/5493510000000?text=Hola,%20necesito%20asesoramiento%20para%20afiliarme%20a%20Apross." target="_blank"
+                           class="inline-flex items-center justify-center px-8 py-4 font-bold text-white bg-whatsapp rounded-full shadow-[0_0_20px_rgba(37,211,102,0.4)] animate-pulse-glow hover:scale-105 transition-transform w-full sm:w-auto text-lg">
+                            <i class="fab fa-whatsapp text-2xl mr-3"></i> Hablar con un Asesor
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 relative h-[400px] w-full hidden md:block reveal active">
+                     <div class="absolute inset-0 bg-gradient-to-tr from-apross-light to-blue-100 rounded-[2rem] overflow-hidden flex items-center justify-center shadow-xl border border-white">
+                         <!-- Imagen representativa de asesoramiento/familia -->
+                         <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Asesora sonriendo" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Tarjeta flotante de Contacto Directo -->
+                    <div class="absolute -bottom-6 -left-6 glass-card p-5 rounded-2xl flex items-center gap-4 animate-float shadow-2xl z-20">
+                        <div class="relative">
+                            <img src="https://ui-avatars.com/api/?name=Asesor+Apross&background=007bb5&color=fff" class="w-14 h-14 rounded-full border-2 border-white shadow-sm" alt="Avatar Asesor">
+                            <div class="absolute bottom-0 right-0 w-4 h-4 bg-whatsapp border-2 border-white rounded-full"></div>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 uppercase font-bold tracking-wider">Atención Inmediata</p>
+                            <h4 class="font-bold text-slate-800">Contacto Directo</h4>
+                            <p class="text-sm font-medium text-apross">Disponible ahora</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Gestiones y Accesos (Estilo FECOTAC) -->
+        <section id="accesos" class="py-20 bg-slate-50 relative">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Gestiones y accesos útiles</h2>
+                    <p class="text-slate-600 text-lg">Ingresá directamente a los servicios oficiales de APROSS para realizar tus trámites.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Tarjeta Autogestión -->
+                    <a href="https://autogestion.apross.gov.ar/" target="_blank" class="glass-card p-8 rounded-3xl reveal group flex flex-col h-full">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center text-apross-dark text-2xl mb-6 group-hover:bg-apross group-hover:text-white transition-colors">
+                            <i class="fas fa-laptop-medical"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Portal de Autogestión</h3>
+                        <p class="text-slate-600 mb-6 flex-grow">Realizá tus gestiones online, descargá tu credencial y autorizá prácticas.</p>
+                        <span class="text-apross font-semibold flex items-center group-hover:translate-x-2 transition-transform">Ingresar <i class="fas fa-arrow-right ml-2 text-sm"></i></span>
+                    </a>
+
+                    <!-- Tarjeta Cartilla -->
+                    <a href="https://apross.gov.ar/cartilla/" target="_blank" class="glass-card p-8 rounded-3xl reveal group flex flex-col h-full" style="transition-delay: 100ms;">
+                        <div class="w-14 h-14 rounded-2xl bg-teal-100 flex items-center justify-center text-teal-600 text-2xl mb-6 group-hover:bg-teal-500 group-hover:text-white transition-colors">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Cartilla de Prestadores</h3>
+                        <p class="text-slate-600 mb-6 flex-grow">Consultá profesionales, clínicas, centros de diagnóstico y farmacias adheridas.</p>
+                        <span class="text-teal-600 font-semibold flex items-center group-hover:translate-x-2 transition-transform">Ver cartilla <i class="fas fa-arrow-right ml-2 text-sm"></i></span>
+                    </a>
+
+                    <!-- Tarjeta Formularios -->
+                    <a href="https://apross.gov.ar/formularios/" target="_blank" class="glass-card p-8 rounded-3xl reveal group flex flex-col h-full" style="transition-delay: 200ms;">
+                        <div class="w-14 h-14 rounded-2xl bg-purple-100 flex items-center justify-center text-purple-600 text-2xl mb-6 group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                            <i class="fas fa-file-signature"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Formularios APROSS</h3>
+                        <p class="text-slate-600 mb-6 flex-grow">Accedé a los formularios oficiales necesarios para trámites presenciales o digitales.</p>
+                        <span class="text-purple-600 font-semibold flex items-center group-hover:translate-x-2 transition-transform">Ver formularios <i class="fas fa-arrow-right ml-2 text-sm"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formulario Híbrido y Contacto Directo -->
+        <section id="contacto" class="py-20 bg-white">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="bg-apross rounded-[2rem] overflow-hidden shadow-2xl reveal relative">
+                    <!-- Texturas de fondo -->
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+                    <div class="absolute bottom-0 left-0 w-80 h-80 bg-apross-dark opacity-50 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4"></div>
+
+                    <div class="grid lg:grid-cols-2 relative z-10">
+                        <!-- Info de Contacto -->
+                        <div class="p-10 lg:p-16 text-white flex flex-col justify-center">
+                            <h2 class="text-3xl font-bold mb-4">¿Necesitás asesoramiento?</h2>
+                            <p class="text-blue-100 mb-8 text-lg">Dejanos tu consulta o contactate directamente con nuestro equipo para recibir orientación personalizada sobre cómo gestionar tu afiliación.</p>
+                            
+                            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <div class="w-12 h-12 rounded-full bg-whatsapp flex items-center justify-center text-xl">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-lg">Asesoramiento vía WhatsApp</p>
+                                        <p class="text-blue-100 text-sm">Respuesta rápida</p>
+                                    </div>
+                                </div>
+                                <a href="https://wa.me/5493510000000?text=Hola,%20quiero%20consultar%20sobre%20la%20afiliaci%C3%B3n." target="_blank" 
+                                   class="block w-full text-center bg-white text-apross-dark font-bold py-3 rounded-xl hover:bg-slate-100 transition-colors">
+                                    Iniciar Chat Ahora
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Formulario de Consulta -->
+                        <div class="bg-white p-10 lg:p-16">
+                            <h3 class="text-2xl font-bold text-slate-800 mb-6">Dejanos tu consulta</h3>
+                            <form action="#" method="POST" class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-1">Nombre y apellido *</label>
+                                    <input type="text" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-apross focus:border-apross outline-none transition-all" placeholder="Ej: Juan Pérez">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-1">Teléfono / WhatsApp *</label>
+                                    <input type="tel" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-apross focus:border-apross outline-none transition-all" placeholder="Código de área + número">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-1">Tu consulta *</label>
+                                    <textarea required rows="3" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-apross focus:border-apross outline-none transition-all resize-none" placeholder="Escribí acá tus dudas..."></textarea>
+                                </div>
+                                <p class="text-xs text-slate-500 mb-4">* Al enviar, autorizas que nos contactemos por este medio.</p>
+                                
+                                <div class="flex flex-col gap-3">
+                                    <!-- Botón Formulario Normal -->
+                                    <button type="submit" class="w-full bg-apross hover:bg-apross-dark text-white font-bold py-3.5 rounded-xl transition-colors shadow-md">
+                                        Enviar Consulta por Email
+                                    </button>
+                                    <!-- Botón Híbrido WSP -->
+                                    <button type="button" onclick="window.open('https://wa.me/5493510000000?text=Hola,%20acabo%20de%20ver%20la%20web%20y%20quiero%20dejar%20mis%20datos%20para%20afiliarme.')" 
+                                            class="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2">
+                                        <i class="fab fa-whatsapp text-whatsapp text-lg"></i> Enviar también por WhatsApp
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-10">
+        <div class="container mx-auto px-6 lg:px-12 text-center text-sm">
+            <p class="mb-2">Portal de Asesoramiento para Afiliaciones.</p>
+            <p>&copy; 2024. Este es un prototipo demostrativo. No es la web oficial de APROSS.</p>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante Permanente -->
+    <a href="https://wa.me/5493510000000?text=Hola,%20necesito%20asesoramiento%20para%20afiliarme." 
+       target="_blank" rel="noopener noreferrer"
+       class="fixed bottom-6 right-6 w-16 h-16 bg-whatsapp text-white rounded-full flex items-center justify-center text-3xl shadow-[0_4px_15px_rgba(37,211,102,0.4)] hover:-translate-y-2 transition-all duration-300 z-50 animate-pulse-glow group">
+        <i class="fab fa-whatsapp"></i>
+        <span class="absolute right-20 bg-slate-800 text-white text-sm font-bold px-4 py-2 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
+            Asesoría Online
+            <span class="absolute top-1/2 -right-2 -translate-y-1/2 border-8 border-transparent border-l-slate-800"></span>
+        </span>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const reveals = document.querySelectorAll('.reveal');
+            const revealOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+            reveals.forEach(reveal => revealOnScroll.observe(reveal));
+        });
+    </script>
+</body>
+</html>
